@@ -1,5 +1,5 @@
 IMAGE_NAME=$1
-REGISTRY=$2
+REGISTRY=$registry
 VERSION=$(cat version)
 docker build -t $IMAGE_NAME:$VERSION .
 docker tag $IMAGE_NAME:$VERSION $REGISTRY/$IMAGE_NAME:$VERSION
