@@ -11,10 +11,10 @@ version=${cleanversion}-${branch:0:2}.${revisioncount}-${hash}
 
 echo $version
 
-#if [[ $BUILD_ENV == "PROD" ]]
-#then
-#  version=${cleanversion}-${revisioncount}
-#fi
+if [[ $BUILD_ENV == "PROD" ]]
+then
+  version=${cleanversion}-${revisioncount}
+fi
 
 version=${BUILD_PREFIX}${version}${BUILD_SUFFIX} 
 
