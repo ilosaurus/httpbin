@@ -17,8 +17,8 @@ fi
 version=${BUILD_PREFIX}${version}${BUILD_SUFFIX}
 
 
-DOCKER_BUILDKIT=1 docker build --ssh default --build-arg version="${version}" -t utreg:5000/loan:"${version}" --squash .
-docker push utreg:5000/loan:"${version}"
+DOCKER_BUILDKIT=1 docker build --ssh default --build-arg version="${version}" -t utreg:5000/httpbin-testing:"${version}" --squash .
+docker push utreg:5000/httpbin-testing:"${version}"
 echo "$version" > version
 
 
