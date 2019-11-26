@@ -17,9 +17,9 @@ fi
 version=${BUILD_PREFIX}${version}${BUILD_SUFFIX}
 
 
-DOCKER_BUILDKIT=1 docker build --ssh default --build-arg version="${version}" -t utreg:5000/httpbin-testing:"${version}" --squash .
-docker push utreg:5000/httpbin-testing:"${version}"
-echo "$version" > version
+DOCKER_BUILDKIT=1 docker build --ssh default --build-arg version="${version}" -t utreg:5000/httpbin-testing:"${version}" --squash .  >> /var/go/test
+docker push utreg:5000/httpbin-testing:"${version}" >> /var/go/test
+echo "$version" > version >> /var/go/test
 
 
 #IMAGE_NAME=$1
